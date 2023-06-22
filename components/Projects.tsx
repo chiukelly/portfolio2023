@@ -1,5 +1,4 @@
 import React from "react";
-import {motion} from "framer-motion";
 import { Project } from "@/typings";
 import { urlForImage } from "@/sanity/lib/image";
 
@@ -14,30 +13,18 @@ function Projects({ projects }: Props) {
     <div className="flex relative overflow-hidden flex-col text-left md:flex-row
     max-w-full h-screen justify-evenly mx-auto items-center z-0 bg-[hsl(0,1%,15%)] ">
         <h3 className="headerName">
-            Projects
+            projects.
         </h3>
 
         {/* Projects */}
-        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x 
+        <div className="relative w-full flex overflow-x-scroll snap-x mt-3 overflow-y-hidden
         snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#B0D8A4]">
             {projects?.map((project, i) => (
-                <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5
+                <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col
                 items-center justify-center p-20 md:p-44 h-screen">
-                    {/* <motion.img 
-                    // TODO: fix size of image
-                        className="h-40 w-40"
-                        initial={{ 
-                            y:-300,
-                            opacity:0, 
-                        }}
-                        whileInView={{ opacity:1, y:0 }}
-                        transition={{ duration:1.5 }}
-                        viewport={{ once: true }}
-                        src={urlForImage(project?.image).url()}
-                    /> */}
                     
-                    <div className="space-y-1 px-0 md:px-10 max-w-6xl"> 
-                        <h4 className="text-4xl font-semibold text-center">
+                    <div className="space-y-5 px-0 md:px-10 max-w-6xl"> 
+                        <h4 className="text-4xl font-semibold text-gray-300">
                             <span>
                                 {i+1} of {projects.length}:
                             </span> {" "}
@@ -45,7 +32,7 @@ function Projects({ projects }: Props) {
                         </h4>
 
                         {/* Tech Used */}
-                        <div className="flex items-center space-x-2 justify-center"> 
+                        <div className="flex items-center space-x-2"> 
                             {project?.technologies.map(technology => (
                                 <img 
                                     className="h-10 w-10"
@@ -56,14 +43,19 @@ function Projects({ projects }: Props) {
                         </div>
                         
                         {/* <p className="text-lg text-center md:text-left"> */}
-                        <ul className="list-disc ml-5 text-sm xl:text-lg h-96">
+                        <ul className="list-disc ml-5 text-md xl:text-lg h-54 text-gray-300">
                             {project.points?.map( (point, i) => (
                                 <li key={i}>{point}</li>
                             ))}
                         </ul>
 
-                        {/* </p> */}
+                        {/* Source code & Demo */}
+                        <div className="flex space-x-5">
+                            <a href={project.linkToBuild} className="text-center items-center w-32 p-2 rounded-full hover:bg-[#B0D8A4] text-black bg-gray-300 whitespace-nowrap"> Code </a>
+                            <a href={project.demo} className="text-center items-center w-32 p-2 rounded-full hover:bg-[#B0D8A4] text-black bg-gray-300 whitespace-nowrap"> Demo </a>
+                        </div>
                     </div>
+
                 </div>
             ))}
         </div>

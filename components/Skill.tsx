@@ -1,8 +1,6 @@
 import React from "react";
-import {motion} from "framer-motion";
 import { Skill } from "@/typings";
 import { urlForImage } from "@/sanity/lib/image";
-import Image from "next/image";
 
 type Props = {
     skill: Skill;

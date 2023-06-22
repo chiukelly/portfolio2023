@@ -1,7 +1,5 @@
 import React from "react";
-import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'
-import BackgroundCircles from "./BackgroundCircles";
-import Link from "next/link";
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { PageInfo } from "@/typings";
 import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";

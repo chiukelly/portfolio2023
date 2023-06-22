@@ -1,6 +1,7 @@
 import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { SocialIcon } from "react-social-icons";
+import { Social } from "@/typings";
 
 type Inputs = {
     name: string,
@@ -9,9 +10,11 @@ type Inputs = {
     message: string,
   };
 
-type Props = {};
+type Props = {
+    socials: Social[]
+};
 
-function ContactMe({}: Props) {
+function ContactMe({socials}: Props) {
     // React Hook Form Library
     const { register, handleSubmit } = useForm<Inputs>();
     // const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
@@ -26,10 +29,14 @@ function ContactMe({}: Props) {
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row
     max-w-7xl px-10 justify-evenly mx-auto items-center space-y-[150px]">
         <h3 className="headerName">
-            Contact
+            contact.
         </h3>
 
         <div className="flex flex-col space-y-10">
+            <div className="flex items-center justify-center indent-1 text-gray-300">
+                <p>Get in touch or email me directly on <span className="text-[#B0D8A4]">chiukelly3@utexas.edu</span></p>
+            </div>
+
             {/* Contact Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
                 <div className="flex space-x-2">
@@ -41,21 +48,23 @@ function ContactMe({}: Props) {
                 <input {...register('subject')} placeholder="Subject" className="contactInput" type="text" />
 
                 <textarea {...register('message')} placeholder="Message" className="contactInput"/>
-                <button type="submit" className="bg-[#B0D8A4] py-5 px-10 rounded-md text-black font-bold text-lg">
+                <button type="submit" className="bg-[#B0D8A4] py-5 px-10 rounded-full text-black font-bold text-lg">
                     Submit
                 </button>
             </form>
 
-            <div className="space-y-1">
-                <div className="flex items-center justify-center indent-1">
-                    <PhoneIcon className="text-[#B0D8A4] h-7 w-7"/>
-                    <p>281-787-9569</p>
-                </div>
-                
-                <div className="flex items-center justify-center indent-1">
-                    <EnvelopeIcon className="text-[#B0D8A4] h-7 w-7"/>
-                    <p>chiukelly3@utexas.edu</p>
-                </div>
+            {/* Social Icons */}
+            <div className="flex flex-row items-center justify-center">
+                    {/* Social Icons */}
+                    {socials.map((social) => (
+                        <SocialIcon 
+                        key={social._id}
+                        url={social.url}
+                        fgColor="#8281A0"
+                        bgColor="transparent" 
+                        />
+                    ))
+                }
             </div>
         </div>
     </div>
