@@ -38,7 +38,7 @@ function ContactMe({socials}: Props) {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 sm:w-screen md:w-fit mx-auto">
                 <div className="flex space-x-2">
                     {/* ... means spread ?*/}
                     <input {...register('name')} placeholder="Name" className="contactInput" type="text" />

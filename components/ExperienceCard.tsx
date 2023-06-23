@@ -9,8 +9,8 @@ type Props = {
 
 function ExperienceCard({ experience }: Props) {
   return (
-  <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-  w-[500px] h-[600px] xl:w-[900px] snap-center bg-[hsl(0,1%,15%)] p-10 hover:opacity-100 opacity-40
+  <article className="flex flex-col rounded-lg items-center space-y-3 flex-shrink-0
+  w-[500px] h-[550px] xl:w-[900px] xl:h-[600px] snap-center bg-[hsl(0,1%,15%)] px-16 py-10 md:px-7 hover:opacity-100 opacity-40
   cursor-pointer transition-opacity duration-200 overflow-hidden">
     <motion.img
         initial={{
@@ -31,14 +31,14 @@ function ExperienceCard({ experience }: Props) {
     />
 
     <div className="px-0 md:px-10">
-        <h4 className="text-3xl font-light">{experience.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience.company}</p>
+        <h4 className="text-xl md:text-2xl font-light">{experience.jobTitle}</h4>
+        <p className="text-xl mt-1 font-normal">{experience.company}</p>
         <div className="flex space-x-2 my-2">
             {/* Tech used */}
             {experience.technologies?.map((technology) => (
                 <img 
                 key={technology._id}
-                className="h-10 w-10 rounded-full"
+                className="h-9 w-9 rounded-full"
                 src={urlForImage(technology.image).url()} />
             ))
             }

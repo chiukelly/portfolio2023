@@ -24,7 +24,7 @@ function Hero({pageInfo}: Props) {
   <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden font-mono">
    {/* TOOD: change to Image from nextJS */}
    {/* Terminal background design */}
-    <div className="w-4/5 h-4/5 bg-[hsl(0,1%,15%)] text-white rounded-md overflow-hidden">
+    <div className="w-5/6 h-5/6 bg-[hsl(0,1%,15%)] text-white scrollbar-thin scrollbar-track-gray-400/10 rounded-md overflow-y-scroll md:overflow-hidden">
         <div className=" flex bg-[hsl(0,1%,29%)] px-2 py-2">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-300"></div>
@@ -37,8 +37,8 @@ function Hero({pageInfo}: Props) {
         </div>
         <div className="p-4">
           <div className="flex">
-            <span className="text-[#B0D8A4]">Kellys-Macbook-Air:~ kellychiu$</span>
-            <span className="ml-1"> 
+            <span className="text-[#B0D8A4] text-xs md:text-base">Kellys-Macbook-Air:~ kellychiu$</span>
+            <span className="ml-1 text-xs md:text-base"> 
               <span>{text}</span>
               <Cursor cursorColor="text-gray-600" />
             </span>
@@ -64,15 +64,15 @@ function Hero({pageInfo}: Props) {
           }}
           // can add 'viewport={{once: true}}' if you only want it to slide in once
           src={urlForImage(pageInfo?.profilePic).url()}
-          className="mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
-          md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px] grayscale"
+          className="mb-20 md:mb-0 flex-shrink-0 w-56 h-56 object-cover
+          rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px] grayscale"
           />
 
           <div className="space-y-10 px-0 md:px-10">
-              <h4 className="text-5xl">
+              <h4 className="md:text-3xl xl:text-5xl">
                   Hello, World!
               </h4>
-              <p className="text-base">
+              <p className="text-sm md:text-base">
                   {pageInfo?.backgroundInformation}
               </p>
           </div>

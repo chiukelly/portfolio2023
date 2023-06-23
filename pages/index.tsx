@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-// import About from '@/components/About'
 import WorkExperience from '@/components/WorkExperience'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
@@ -42,10 +41,6 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       <section id="hero" className='snap-start'>
         <Hero pageInfo={pageInfo}/>
       </section>
-
-      {/* <section id="about" className='snap-center'>
-        <About pageInfo={pageInfo}/>
-      </section> */}
 
       <section id="experience" className='snap-center'>
         <WorkExperience experiences={experiences}/>
