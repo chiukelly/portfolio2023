@@ -37,7 +37,7 @@ function Hero({pageInfo}: Props) {
         </div>
         <div className="p-4">
           <div className="flex">
-            <span className="text-[#B0D8A4] sm:text-xs md:text-base">Kellys-Macbook-Air:~ kellychiu$</span>
+            <span className="text-[#B0D8A4] text-xs sm:text-xs md:text-base">Kellys-Macbook-Air:~ kellychiu$</span>
             <span className="ml-1 text-xs md:text-base"> 
               <span>{text}</span>
               <Cursor cursorColor="text-gray-600" />

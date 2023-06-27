@@ -30,7 +30,7 @@ const inter = Inter({ subsets: ['latin'] })
 const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
   return (
     // background color, ALL white text, height of screen
-    <div className='bg-[hsl(0,0%,0%)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0
+    <div className='bg-black text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0
     scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-rounded-md scrollbar-thumb-[hsl(0,1%,29%)]'>
       <Head>
         <title> Portfolio </title>
